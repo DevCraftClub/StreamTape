@@ -1,0 +1,64 @@
+name: Запрос на новый функционал
+description: Опиши то, что хочешь видеть в плагине
+title: "[Запрос]: "
+labels:
+    - Запрос на функционал
+    - enhancement
+assignees:
+    - Gokujo
+body:
+    -   type: markdown
+        attributes:
+            value: |
+                Спасибо, что нашли время, чтобы составить этот отчёт
+    -   type: checkboxes
+        id: read-rules
+        attributes:
+            label: Пользовательское соглашение
+            description: Перед просьбой добавить или "починить" что-либо в срочном порядке - [нужно прочесть соглашение](https://devcraft.club/pages/licence-agreement/).
+            options:
+                -   label: Я прочёл / прочла соглашение и согласен / согласна с ними
+                    required: true
+    -   type: textarea
+        id: what-do-you-need
+        attributes:
+            label: В чём соль?
+            description: Если можно, то пожалуйста, опиши то, что хочешь увидеть в плагине в дальнейшем. Если можно пошагово и как можно детальней
+            placeholder: Я хочу, но не значю что...
+            value: "Моя хотелка!"
+        validations:
+            required: true
+    -   type: dropdown
+        id: dle-version
+        attributes:
+            label: Версия DLE
+            description: На какую версию DLE расчитывать?
+            options:
+                - "16.x (Default)"
+                - "15.x"
+                - "14.x"
+                - "13.x"
+                - "< 13.x"
+        validations:
+            required: true
+    -   type: dropdown
+        id: php-version
+        attributes:
+            label: Версия PHP
+            description: На какой версии PHP работает сайт?
+            options:
+                - "8.x (Default)"
+                - "7.x"
+                - "5.x"
+        validations:
+            required: true
+
+    -   type: textarea
+        id: "screenshots"
+        attributes:
+            label: Скриншоты и файлы
+            description: Если есть возможность, добавь скриншоты и / или файлы как ты себе представляешь новый функционал
+            value: |
+                ![DESCRIPTION](LINK.png)
+        validations:
+            required: false

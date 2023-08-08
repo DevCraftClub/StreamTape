@@ -1,10 +1,8 @@
 import hashlib
-import re
 from typing import Optional
 
 from streamtape.ApiResponse import ApiResponse
 from streamtape.BaseConfig import BaseConfig
-from streamtape.Stream import Stream
 
 
 class Upload(BaseConfig):
@@ -54,10 +52,6 @@ class Upload(BaseConfig):
 				})
 
 				if file_upload_response["status"] == 200:
-					regex = r"https:\/\/streamtape.com\/v\/(?P<file_id>.*)\/.*"
-					match = re.match(regex, file_upload_response["result"]["url"])
-					stream = Stream(self.api_user, self.api_password)
-					file_info = stream.file_info(match.group('file_id')) if match.group('file_id') else {}
 					return file_upload_response["result"]
 				else:
 					return ApiResponse.error_response(file_upload_response["status"], file_upload_response["msg"])

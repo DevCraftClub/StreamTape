@@ -23,10 +23,10 @@ class Stream(BaseConfig):
 		    - ApiResponseError: If the API response status is not 200, indicating an error occurred.
 
 		"""
-		url = self.url_query(f"{self.parameter}/dlticket")
-		response = BaseConfig.send_request(url, data={
+		url = self.url_query(f"{self.parameter}/dlticket", {
 			"file": file_id
 		})
+		response = BaseConfig.send_request(url)
 
 		if response["status"] == 200:
 			return {
@@ -52,11 +52,11 @@ class Stream(BaseConfig):
 
 		"""
 		dl_ticket = self.dlticket(file_id)
-		url = self.url_query(f"{self.parameter}/dl", use_login=False)
-		response = BaseConfig.send_request(url, data={
+		url = self.url_query(f"{self.parameter}/dl", {
 			"file"  : file_id,
 			"ticket": dl_ticket
-		})
+		}, use_login=False)
+		response = BaseConfig.send_request(url)
 
 		if response["status"] == 200:
 			return {
@@ -80,10 +80,10 @@ class Stream(BaseConfig):
 		Raises:
 		    - ApiResponseError: If the API response status is not 200.
 		"""
-		url = self.url_query(f"{self.parameter}/info")
-		response = BaseConfig.send_request(url, data={
+		url = self.url_query(f"{self.parameter}/info", {
 			"file": ','.join(file_id),
 		})
+		response = BaseConfig.send_request(url)
 
 		if response["status"] == 200:
 			return response["result"]

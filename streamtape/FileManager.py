@@ -112,11 +112,11 @@ class FileManager(BaseConfig):
 		Raises:
 		    - ApiResponseError: If the API response status is not 200.
 		"""
-		url = self.url_query(f"{self.parameter}/renamefolder")
-		response = BaseConfig.send_request(url, data={
+		url = self.url_query(f"{self.parameter}/renamefolder", query={
 			"name"  : folder_name,
 			"folder": parent_folder,
 		})
+		response = BaseConfig.send_request(url)
 
 		if response["status"] == 200:
 			return bool(response["result"])
@@ -145,10 +145,10 @@ class FileManager(BaseConfig):
 				"result": true
 			}
 		"""
-		url = self.url_query(f"{self.parameter}/deletefolder")
-		response = BaseConfig.send_request(url, data={
+		url = self.url_query(f"{self.parameter}/deletefolder", query={
 			"folder": folder_id,
 		})
+		response = BaseConfig.send_request(url)
 
 		if response["status"] == 200:
 			return bool(response["result"])
@@ -179,11 +179,11 @@ class FileManager(BaseConfig):
 				"result": true
 			}
 		"""
-		url = self.url_query(f"{self.parameter}/deletefolder")
-		response = BaseConfig.send_request(url, data={
+		url = self.url_query(f"{self.parameter}/deletefolder", query={
 			"file": file,
 			"name": name
 		})
+		response = BaseConfig.send_request(url)
 
 		if response["status"] == 200:
 			return bool(response["result"])
@@ -205,11 +205,11 @@ class FileManager(BaseConfig):
 		Raises:
 		    - ApiResponse: If the response status is not 200, an ApiResponse error response is raised.
 		"""
-		url = self.url_query(f"{self.parameter}/move")
-		response = BaseConfig.send_request(url, data={
+		url = self.url_query(f"{self.parameter}/move", query={
 			"file"  : file_id,
 			"folder": folder_id
 		})
+		response = BaseConfig.send_request(url)
 
 		if response["status"] == 200:
 			return bool(response["result"])

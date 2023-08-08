@@ -90,3 +90,13 @@ uploader = Upload(API_USER_KEY, API_PASSWORD)
 print(uploader.upload("path_to_file", "folder_id"))
 ```
 
+## Changelog
+
+### 1.0.0
+
+- Initial release   
+
+### 1.0.1
+
+- Fixed variables
+- Fixed upload parameters

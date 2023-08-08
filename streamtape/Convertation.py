@@ -74,10 +74,10 @@ class Convertation(BaseConfig):
 				"result": "https://thumb.tapecontent.net/thumb/wg8ad12d3QiJRXG/thumb.jpg"
 			}
 		"""
-		url = self.url_query(f"{self.parameter}/getsplash")
-		response = BaseConfig.send_request(url, data={
+		url = self.url_query(f"{self.parameter}/getsplash", query={
 			"file": file_id
 		})
+		response = BaseConfig.send_request(url)
 
 		if response["status"] == 200:
 			return response["result"]

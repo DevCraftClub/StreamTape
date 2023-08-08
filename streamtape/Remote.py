@@ -28,13 +28,13 @@ class Remote(BaseConfig):
 		    - ApiResponse: If the response status is not 200, an error response is returned.
 
 		"""
-		url = self.url_query(f"{self.parameter}/add")
-		response = BaseConfig.send_request(url, data={
+		url = self.url_query(f"{self.parameter}/add", {
 			"url"    : file_url,
 			"folder" : folder or None,
 			"headers": headers or {},
 			"name"   : name or None
 		})
+		response = BaseConfig.send_request(url)
 
 		if response["status"] == 200:
 			stream = Stream(self.api_user, self.api_password)
@@ -69,10 +69,10 @@ class Remote(BaseConfig):
 				"result": true
 			}
 		"""
-		url = self.url_query(f"{self.parameter}/remove")
-		response = BaseConfig.send_request(url, data={
+		url = self.url_query(f"{self.parameter}/remove", {
 			"id": file_id,
 		})
+		response = BaseConfig.send_request(url)
 
 		if response["status"] == 200:
 			return bool(response["result"])
@@ -114,10 +114,10 @@ class Remote(BaseConfig):
 				}
 			}
 		"""
-		url = self.url_query(f"{self.parameter}/status")
-		response = BaseConfig.send_request(url, data={
+		url = self.url_query(f"{self.parameter}/status", {
 			"id": file_id,
 		})
+		response = BaseConfig.send_request(url)
 
 		if response["status"] == 200:
 			return response["result"]

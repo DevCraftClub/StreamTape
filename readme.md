@@ -1,1 +1,1 @@
-просто шаблон для репозиториев
+# Unofficial StreamTape API wrapper

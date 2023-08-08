@@ -1,8 +1,9 @@
-name: Запрос на новый функционал
-description: Опиши то, что хочешь видеть в плагине
-title: "[Запрос]: "
+name: Feature request / Запрос на новый функционал
+description: Describe as detailed as you can what you want / Опиши то, что хочешь видеть в плагине
+title: "[REQUEST]: "
 labels:
-    - Запрос на функционал
+    - feature
+    - request
     - enhancement
 assignees:
     - Gokujo
@@ -10,54 +11,40 @@ body:
     -   type: markdown
         attributes:
             value: |
-                Спасибо, что нашли время, чтобы составить этот отчёт
-    -   type: checkboxes
-        id: read-rules
-        attributes:
-            label: Пользовательское соглашение
-            description: Перед просьбой добавить или "починить" что-либо в срочном порядке - [нужно прочесть соглашение](https://devcraft.club/pages/licence-agreement/).
-            options:
-                -   label: Я прочёл / прочла соглашение и согласен / согласна с ними
-                    required: true
-    -   type: textarea
-        id: what-do-you-need
-        attributes:
-            label: В чём соль?
-            description: Если можно, то пожалуйста, опиши то, что хочешь увидеть в плагине в дальнейшем. Если можно пошагово и как можно детальней
-            placeholder: Я хочу, но не значю что...
-            value: "Моя хотелка!"
-        validations:
-            required: true
+                Thank you that you took your time for applying this form / Спасибо, что нашли время, чтобы составить этот отчёт
+    - type: checkboxes
+      id: read-rules
+      attributes:
+          label: Пользовательское соглашение
+          description: You have to read the agreement and translate it to your language from the [site](https://devcraft.club/pages/licence-agreement/) / Перед просьбой добавить или "починить" что-либо в срочном порядке - [нужно прочесть соглашение](https://devcraft.club/pages/licence-agreement/).
+          options:
+              - label: I read the agreement / Я прочёл / прочла соглашение и согласен / согласна с ними
+                required: true
+    - type: textarea
+      id: what-do-you-need
+      attributes:
+          label: What's up? / В чём соль?
+          description: Please tell me as detailed as you can what do you want / Если можно, то пожалуйста, опиши то, что хочешь. Если можно пошагово и как можно детальней
+          placeholder: I want to... but I don't know what... / Я хочу, но не знаю что...
+          value: "My feature request / Моя хотелка"
+      validations:
+          required: true
     -   type: dropdown
-        id: dle-version
+        id: python-version
         attributes:
-            label: Версия DLE
-            description: На какую версию DLE расчитывать?
+            label: Python version / Версия Python
+            description: Which python version do you use in your environment? / Какую версию питон используешь в окружении разработки?
             options:
-                - "16.x (Default)"
-                - "15.x"
-                - "14.x"
-                - "13.x"
-                - "< 13.x"
+                - "3.10 (Default)"
+                - "3.9"
+                - "<= 3.8"
         validations:
             required: true
-    -   type: dropdown
-        id: php-version
-        attributes:
-            label: Версия PHP
-            description: На какой версии PHP работает сайт?
-            options:
-                - "8.x (Default)"
-                - "7.x"
-                - "5.x"
-        validations:
-            required: true
-
     -   type: textarea
         id: "screenshots"
         attributes:
-            label: Скриншоты и файлы
-            description: Если есть возможность, добавь скриншоты и / или файлы как ты себе представляешь новый функционал
+            label: Screenshots / Скриншоты
+            description: If you can take some screenshots / Если есть возможность, добавь скриншоты преступления
             value: |
                 ![DESCRIPTION](LINK.png)
         validations:

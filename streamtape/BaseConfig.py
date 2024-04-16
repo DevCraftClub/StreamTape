@@ -8,7 +8,7 @@ from streamtape.ApiResponse import ApiResponse
 
 
 class BaseConfig:
-	url: str = 'https://api.streamtape.com'
+	url: str = 'https://api.strcloud.in'
 	api_user: Optional[str] = None
 	api_password: Optional[str] = None
 

@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
 	name="streamtape",
-	version="1.0.2",
+	version="1.0.3",
 	description="Unofficial python api wrapper from https://streamtape.com",
 	long_description=open("README.md", "r").read(),
 	long_description_content_type="text/markdown",

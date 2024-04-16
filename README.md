@@ -104,3 +104,10 @@ print(uploader.upload("path_to_file", "folder_id"))
 ### 1.0.2
 
 * Fixed API link (thx to @[Gairolarishav](https://github.com/Gairolarishav))
+
+### 1.0.3
+
+* Revert changes from 1.0.2. It seems it was spam. Sorry. Set your own url with function
+  ```
+  set_api_url
+  ```

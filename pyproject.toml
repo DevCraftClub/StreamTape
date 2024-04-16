@@ -1,0 +1,19 @@
+[project]
+name = "streamtape"
+version = "1.0.2"
+authors = [
+    { name = "Maxim Harder", email = "dev@devcraft.club" },
+]
+description = "Unofficial python api wrapper from https://streamtape.come"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/DevCraftClub/StreamTape"
+Issues = "https://github.com/DevCraftClub/StreamTape/issues"
+Docs = "https://devcraftclub.github.io/StreamTape/"

@@ -94,9 +94,13 @@ print(uploader.upload("path_to_file", "folder_id"))
 
 ### 1.0.0
 
-- Initial release   
+- Initial release
 
 ### 1.0.1
 
 - Fixed variables
 - Fixed upload parameters
+
+### 1.0.2
+
+* Fixed API link (thx to @[Gairolarishav](https://github.com/Gairolarishav))
